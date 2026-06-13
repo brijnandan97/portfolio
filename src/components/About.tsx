@@ -45,7 +45,7 @@ export default function About() {
           <span className="text-neon-blue text-sm font-mono tracking-wider uppercase">
             About Me
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
             Building Digital{" "}
             <span className="text-gradient">Excellence</span>
           </h2>
@@ -56,7 +56,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {highlights.map((item, index) => (
             <motion.div
               key={item.title}
@@ -80,9 +80,9 @@ export default function About() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 glass-card rounded-2xl p-8 md:p-12"
+          className="mt-12 sm:mt-16 glass-card rounded-2xl p-6 sm:p-8 md:p-12"
         >
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <div>
               <h3 className="text-2xl font-bold text-white mb-4">
                 Why Work With Me?

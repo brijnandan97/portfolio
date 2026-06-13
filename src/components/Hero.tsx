@@ -97,7 +97,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xl md:text-3xl text-slate-400 mb-4 h-10 flex items-center justify-center gap-2"
+          className="text-lg sm:text-xl md:text-3xl text-slate-400 mb-4 h-8 sm:h-10 flex items-center justify-center gap-2"
         >
           <span>I&apos;m a</span>
           <span className="text-neon-blue font-semibold">
@@ -110,7 +110,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-lg text-slate-500 max-w-2xl mx-auto mb-10"
+          className="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto mb-8 sm:mb-10 px-2"
         >
           6+ years of experience crafting high-performance web applications.
           I help businesses build scalable, beautiful digital products that users love.
@@ -144,7 +144,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4 }}
-          className="mt-16 flex items-center justify-center gap-12 text-center"
+          className="mt-12 sm:mt-16 flex items-center justify-center gap-6 sm:gap-12 text-center"
         >
           {[
             { number: "6+", label: "Years Experience" },
@@ -156,10 +156,10 @@ export default function Hero() {
               whileHover={{ scale: 1.1, y: -5 }}
               className="cursor-default"
             >
-              <div className="text-3xl md:text-4xl font-bold text-gradient">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">
                 {stat.number}
               </div>
-              <div className="text-sm text-slate-500 mt-1">{stat.label}</div>
+              <div className="text-xs sm:text-sm text-slate-500 mt-1">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

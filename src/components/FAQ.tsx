@@ -96,7 +96,7 @@ export default function FAQ() {
           <span className="text-neon-blue text-sm font-mono tracking-wider uppercase">
             FAQ
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
             Common{" "}
             <span className="text-gradient">Questions</span>
           </h2>

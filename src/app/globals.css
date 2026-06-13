@@ -126,7 +126,7 @@
     background: linear-gradient(135deg, #00d4ff, #b84dff);
     color: white;
     font-weight: 600;
-    padding: 14px 32px;
+    padding: 12px 24px;
     border-radius: 50px;
     border: none;
     cursor: pointer;
@@ -135,6 +135,12 @@
     overflow: hidden;
     display: inline-block;
     text-decoration: none;
+  }
+
+  @media (min-width: 640px) {
+    .btn-primary {
+      padding: 14px 32px;
+    }
   }
 
   .btn-primary:hover {
@@ -146,13 +152,19 @@
     background: transparent;
     color: #00d4ff;
     font-weight: 600;
-    padding: 14px 32px;
+    padding: 12px 24px;
     border-radius: 50px;
     border: 1px solid rgba(0, 212, 255, 0.5);
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-block;
     text-decoration: none;
+  }
+
+  @media (min-width: 640px) {
+    .btn-secondary {
+      padding: 14px 32px;
+    }
   }
 
   .btn-secondary:hover {
@@ -171,6 +183,13 @@
     .section-padding {
       padding-top: 60px;
       padding-bottom: 60px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-padding {
+      padding-top: 48px;
+      padding-bottom: 48px;
     }
   }
 }

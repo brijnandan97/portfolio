@@ -60,7 +60,7 @@ export default function TechStack() {
           <span className="text-neon-green text-sm font-mono tracking-wider uppercase">
             Tech Arsenal
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
             Tools I{" "}
             <span className="text-gradient">Master</span>
           </h2>
@@ -81,7 +81,7 @@ export default function TechStack() {
                 <span className="w-8 h-[1px] bg-gradient-to-r from-neon-blue to-transparent" />
                 {category.title}
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {category.techs.map((tech, i) => (
                   <motion.div
                     key={tech.name}
@@ -95,7 +95,7 @@ export default function TechStack() {
                       scale: 1.1,
                       boxShadow: `0 0 20px ${tech.color}40`,
                     }}
-                    className="px-5 py-2.5 rounded-xl border border-white/10 bg-dark-800/50 text-sm font-medium text-slate-300 cursor-default transition-colors hover:border-opacity-50"
+                    className="px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl border border-white/10 bg-dark-800/50 text-xs sm:text-sm font-medium text-slate-300 cursor-default transition-colors hover:border-opacity-50"
                     style={{
                       ["--hover-border" as string]: tech.color,
                     }}

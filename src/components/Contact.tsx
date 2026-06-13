@@ -40,7 +40,7 @@ export default function Contact() {
           <span className="text-neon-pink text-sm font-mono tracking-wider uppercase">
             Let&apos;s Talk
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
             Start Your{" "}
             <span className="text-gradient">Project</span>
           </h2>
@@ -159,7 +159,7 @@ export default function Contact() {
                 placeholder="john@company.com"
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-sm text-slate-400 mb-1.5 block">Project Type</label>
                 <select

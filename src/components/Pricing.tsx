@@ -120,7 +120,7 @@ export default function Pricing() {
           <span className="text-neon-purple text-sm font-mono tracking-wider uppercase">
             Pricing
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
             Transparent{" "}
             <span className="text-gradient">Pricing</span>
           </h2>
@@ -129,27 +129,27 @@ export default function Pricing() {
             documentation, and deployment support.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-2 px-2">
             {Object.entries(regions).map(([key, region]) => (
               <motion.button
                 key={key}
                 onClick={() => setSelectedRegion(key)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
                   selectedRegion === key
                     ? "bg-neon-blue/20 text-neon-blue border border-neon-blue/50"
                     : "bg-white/5 text-slate-400 border border-white/10 hover:border-white/20"
                 }`}
               >
-                <span className="mr-1.5">{region.flag}</span>
+                <span className="mr-1 sm:mr-1.5">{region.flag}</span>
                 {region.label}
               </motion.button>
             ))}
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}

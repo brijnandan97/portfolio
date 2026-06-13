@@ -83,7 +83,7 @@ export default function Experience() {
           <span className="text-neon-pink text-sm font-mono tracking-wider uppercase">
             Career Journey
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
             Professional{" "}
             <span className="text-gradient">Experience</span>
           </h2>
@@ -95,7 +95,7 @@ export default function Experience() {
         <div className="relative">
           <div className="absolute left-[22px] md:left-1/2 md:-translate-x-px top-0 bottom-0 w-[2px] bg-gradient-to-b from-neon-blue via-neon-purple to-neon-pink opacity-30" />
 
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.company + exp.role}
@@ -114,10 +114,10 @@ export default function Experience() {
                   )}
                 </div>
 
-                <div className={`ml-10 md:ml-0 md:w-[45%] glass-card rounded-2xl p-6 ${
+                <div className={`ml-10 md:ml-0 md:w-[45%] glass-card rounded-2xl p-5 sm:p-6 ${
                   index % 2 === 0 ? "md:text-right" : "md:text-left"
                 }`}>
-                  <div className="flex items-center gap-2 mb-1 flex-wrap" style={{ justifyContent: index % 2 === 0 ? "flex-end" : "flex-start" }}>
+                  <div className="flex items-center gap-2 mb-1 flex-wrap md:justify-end" style={{ justifyContent: index % 2 === 0 ? undefined : "flex-start" }}>
                     {exp.current && (
                       <span className="text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ background: `${exp.color}20`, color: exp.color }}>
                         CURRENT
@@ -125,14 +125,14 @@ export default function Experience() {
                     )}
                     <span className="text-xs text-slate-500">{exp.period}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">{exp.role}</h3>
                   <p className="text-sm font-medium mt-1" style={{ color: exp.color }}>
                     {exp.company} · {exp.location}
                   </p>
-                  <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+                  <p className="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">
                     {exp.description}
                   </p>
-                  <ul className={`mt-4 space-y-2 ${index % 2 === 0 ? "md:text-right" : ""}`}>
+                  <ul className={`mt-3 sm:mt-4 space-y-2 ${index % 2 === 0 ? "md:text-right" : ""}`}>
                     {exp.highlights.map((h) => (
                       <li key={h} className="text-xs text-slate-500 flex items-start gap-2" style={{ justifyContent: index % 2 === 0 ? "flex-end" : "flex-start" }}>
                         {index % 2 !== 0 && <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ background: exp.color }} />}

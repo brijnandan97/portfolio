@@ -24,8 +24,8 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/5 bg-dark-900">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-4 gap-10">
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+          <div className="col-span-2 md:col-span-1">
             <a href="#home" className="text-3xl font-bold text-gradient inline-block mb-4">
               BS.
             </a>

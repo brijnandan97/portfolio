@@ -79,7 +79,7 @@ export default function Projects() {
           <span className="text-neon-blue text-sm font-mono tracking-wider uppercase">
             Portfolio
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
             Featured{" "}
             <span className="text-gradient">Projects</span>
           </h2>
@@ -89,7 +89,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}

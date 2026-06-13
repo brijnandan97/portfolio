@@ -62,7 +62,7 @@ export default function Process() {
           <span className="text-neon-blue text-sm font-mono tracking-wider uppercase">
             How I Work
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
             My{" "}
             <span className="text-gradient">Process</span>
           </h2>
@@ -74,7 +74,7 @@ export default function Process() {
         <div className="relative">
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink opacity-20 -translate-y-1/2" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6">
             {steps.map((step, index) => (
               <motion.div
                 key={step.step}

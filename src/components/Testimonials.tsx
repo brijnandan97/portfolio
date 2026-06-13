@@ -47,7 +47,7 @@ export default function Testimonials() {
           <span className="text-neon-green text-sm font-mono tracking-wider uppercase">
             Testimonials
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
             What Clients{" "}
             <span className="text-gradient">Say</span>
           </h2>
@@ -57,7 +57,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass-card rounded-2xl p-8 md:p-12 text-center"
+          className="glass-card rounded-2xl p-6 sm:p-8 md:p-12 text-center"
         >
           <div className="flex justify-center mb-6">
             {[...Array(testimonials[active].rating)].map((_, i) => (
@@ -76,7 +76,7 @@ export default function Testimonials() {
             key={active}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-lg md:text-xl text-slate-300 leading-relaxed mb-8 max-w-3xl mx-auto italic"
+            className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed mb-6 sm:mb-8 max-w-3xl mx-auto italic"
           >
             &ldquo;{testimonials[active].text}&rdquo;
           </motion.p>
