@@ -79,11 +79,11 @@ export default function Projects() {
           <span className="text-neon-blue text-sm font-mono tracking-wider uppercase">
             Portfolio
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6" style={{ color: "var(--text-heading)" }}>
             Featured{" "}
             <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+          <p className="max-w-2xl mx-auto text-lg" style={{ color: "var(--text-secondary)" }}>
             A selection of projects that showcase my expertise in building
             production-grade applications.
           </p>
@@ -114,7 +114,8 @@ export default function Projects() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-500 hover:text-neon-blue transition-colors"
+                    className="hover:text-neon-blue transition-colors"
+                    style={{ color: "var(--text-muted)" }}
                   >
                     <svg
                       className="w-5 h-5"
@@ -133,14 +134,14 @@ export default function Projects() {
                 )}
               </div>
 
-              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-neon-blue transition-colors">
+              <h3 className="text-lg font-bold mb-2 group-hover:text-neon-blue transition-colors" style={{ color: "var(--text-heading)" }}>
                 {project.title}
               </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
+              <p className="text-sm leading-relaxed mb-4 flex-grow" style={{ color: "var(--text-secondary)" }}>
                 {project.description}
               </p>
 
-              <div className="text-xs text-slate-500 mb-4 flex items-center gap-1.5">
+              <div className="text-xs mb-4 flex items-center gap-1.5" style={{ color: "var(--text-muted)" }}>
                 <svg className="w-3.5 h-3.5" style={{ color: project.color }} fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
                 </svg>
@@ -151,7 +152,8 @@ export default function Projects() {
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-slate-400 border border-white/5"
+                    className="text-[11px] px-2.5 py-1 rounded-md border"
+                    style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)", color: "var(--text-secondary)" }}
                   >
                     {t}
                   </span>

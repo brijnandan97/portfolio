@@ -47,7 +47,7 @@ export default function Testimonials() {
           <span className="text-neon-green text-sm font-mono tracking-wider uppercase">
             Testimonials
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6" style={{ color: "var(--text-heading)" }}>
             What Clients{" "}
             <span className="text-gradient">Say</span>
           </h2>
@@ -76,14 +76,15 @@ export default function Testimonials() {
             key={active}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed mb-6 sm:mb-8 max-w-3xl mx-auto italic"
+            className="text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 max-w-3xl mx-auto italic"
+            style={{ color: "var(--text-primary)" }}
           >
             &ldquo;{testimonials[active].text}&rdquo;
           </motion.p>
 
           <motion.div key={`name-${active}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <p className="font-semibold text-white">{testimonials[active].name}</p>
-            <p className="text-sm text-slate-500">{testimonials[active].role}</p>
+            <p className="font-semibold" style={{ color: "var(--text-heading)" }}>{testimonials[active].name}</p>
+            <p className="text-sm" style={{ color: "var(--text-muted)" }}>{testimonials[active].role}</p>
           </motion.div>
 
           <div className="flex justify-center gap-2 mt-8">
@@ -91,11 +92,12 @@ export default function Testimonials() {
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${
+                className={`h-2.5 rounded-full transition-all ${
                   i === active
                     ? "bg-neon-blue w-8"
-                    : "bg-slate-700 hover:bg-slate-600"
+                    : "w-2.5"
                 }`}
+                style={i !== active ? { background: "var(--bg-tertiary)" } : undefined}
               />
             ))}
           </div>

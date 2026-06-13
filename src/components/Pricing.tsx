@@ -120,11 +120,11 @@ export default function Pricing() {
           <span className="text-neon-purple text-sm font-mono tracking-wider uppercase">
             Pricing
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6" style={{ color: "var(--text-heading)" }}>
             Transparent{" "}
             <span className="text-gradient">Pricing</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg mb-8">
+          <p className="max-w-2xl mx-auto text-lg mb-8" style={{ color: "var(--text-secondary)" }}>
             Clear pricing with no hidden fees. Every project includes clean code,
             documentation, and deployment support.
           </p>
@@ -139,8 +139,9 @@ export default function Pricing() {
                 className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
                   selectedRegion === key
                     ? "bg-neon-blue/20 text-neon-blue border border-neon-blue/50"
-                    : "bg-white/5 text-slate-400 border border-white/10 hover:border-white/20"
+                    : "border"
                 }`}
+                style={selectedRegion !== key ? { background: "var(--bg-card)", borderColor: "var(--border-input)", color: "var(--text-secondary)" } : undefined}
               >
                 <span className="mr-1 sm:mr-1.5">{region.flag}</span>
                 {region.label}
@@ -168,8 +169,8 @@ export default function Pricing() {
               )}
 
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-white mb-1">{plan.name}</h3>
-                <p className="text-slate-500 text-sm">{plan.description}</p>
+                <h3 className="text-xl font-bold mb-1" style={{ color: "var(--text-heading)" }}>{plan.name}</h3>
+                <p className="text-sm" style={{ color: "var(--text-muted)" }}>{plan.description}</p>
               </div>
 
               <div className="mb-6">
@@ -183,12 +184,12 @@ export default function Pricing() {
                 >
                   {currentPricing.symbol}{currentPricing[plan.key]}
                 </motion.span>
-                <span className="text-slate-500 text-sm ml-2">/{plan.period}</span>
+                <span className="text-sm ml-2" style={{ color: "var(--text-muted)" }}>/{plan.period}</span>
               </div>
 
               <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-sm text-slate-300">
+                  <li key={feature} className="flex items-center gap-3 text-sm" style={{ color: "var(--text-primary)" }}>
                     <svg
                       className="w-4 h-4 flex-shrink-0"
                       style={{ color: plan.color }}
@@ -202,8 +203,8 @@ export default function Pricing() {
                   </li>
                 ))}
                 {plan.excluded.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-sm text-slate-600">
-                    <svg className="w-4 h-4 flex-shrink-0 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <li key={feature} className="flex items-center gap-3 text-sm" style={{ color: "var(--text-muted)" }}>
+                    <svg className="w-4 h-4 flex-shrink-0" style={{ color: "var(--text-muted)" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                     {feature}
@@ -216,9 +217,9 @@ export default function Pricing() {
                 className={`w-full text-center py-3 rounded-xl font-semibold transition-all text-sm ${
                   plan.popular
                     ? "btn-primary"
-                    : "border border-white/10 text-slate-300 hover:border-neon-blue/50 hover:text-neon-blue"
+                    : "border hover:border-neon-blue/50 hover:text-neon-blue"
                 }`}
-                style={plan.popular ? { borderRadius: "12px" } : undefined}
+                style={plan.popular ? { borderRadius: "12px" } : { borderColor: "var(--border-input)", color: "var(--text-primary)" }}
               >
                 Get Started
               </a>

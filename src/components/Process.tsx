@@ -62,11 +62,11 @@ export default function Process() {
           <span className="text-neon-blue text-sm font-mono tracking-wider uppercase">
             How I Work
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6" style={{ color: "var(--text-heading)" }}>
             My{" "}
             <span className="text-gradient">Process</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+          <p className="max-w-2xl mx-auto text-lg" style={{ color: "var(--text-secondary)" }}>
             A transparent, collaborative approach that keeps you in control at every stage.
           </p>
         </motion.div>
@@ -96,10 +96,10 @@ export default function Process() {
                 >
                   STEP {step.step}
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--text-heading)" }}>
                   {step.title}
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-3">
+                <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--text-secondary)" }}>
                   {step.description}
                 </p>
                 <span

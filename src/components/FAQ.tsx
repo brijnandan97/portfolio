@@ -44,13 +44,14 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="border-b border-white/5 last:border-0"
+      className="border-b last:border-0"
+      style={{ borderColor: "var(--border-color)" }}
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-5 flex items-center justify-between text-left group"
       >
-        <span className="text-base font-medium text-slate-200 group-hover:text-neon-blue transition-colors pr-4">
+        <span className="text-base font-medium group-hover:text-neon-blue transition-colors pr-4" style={{ color: "var(--text-primary)" }}>
           {faq.question}
         </span>
         <motion.span
@@ -70,7 +71,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <p className="text-slate-400 text-sm leading-relaxed pb-5">
+            <p className="text-sm leading-relaxed pb-5" style={{ color: "var(--text-secondary)" }}>
               {faq.answer}
             </p>
           </motion.div>
@@ -96,7 +97,7 @@ export default function FAQ() {
           <span className="text-neon-blue text-sm font-mono tracking-wider uppercase">
             FAQ
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6" style={{ color: "var(--text-heading)" }}>
             Common{" "}
             <span className="text-gradient">Questions</span>
           </h2>

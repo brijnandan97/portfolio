@@ -82,7 +82,7 @@ export default function Hero() {
           >
             <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
               <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-neon-blue via-neon-purple to-neon-pink opacity-40 blur-sm" />
-              <div className="relative w-full h-full rounded-full overflow-hidden border border-white/10">
+              <div className="relative w-full h-full rounded-full overflow-hidden border" style={{ borderColor: "var(--border-input)" }}>
                 <Image
                   src="/profile.png"
                   alt="Brij Singla"
@@ -111,6 +111,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-5xl md:text-7xl lg:text-7xl font-bold mb-6 leading-tight"
+              style={{ color: "var(--text-heading)" }}
             >
               Hi, I&apos;m{" "}
               <span className="text-gradient">Brij Singla</span>
@@ -120,7 +121,8 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg sm:text-xl md:text-3xl text-slate-400 mb-4 h-8 sm:h-10 flex items-center justify-center lg:justify-start gap-2"
+              className="text-lg sm:text-xl md:text-3xl mb-4 h-8 sm:h-10 flex items-center justify-center lg:justify-start gap-2"
+              style={{ color: "var(--text-secondary)" }}
             >
               <span>I&apos;m a</span>
               <span className="text-neon-blue font-semibold">
@@ -133,7 +135,8 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-base sm:text-lg text-slate-500 max-w-2xl mb-8 sm:mb-10 px-2 lg:px-0"
+              className="text-base sm:text-lg max-w-2xl mb-8 sm:mb-10 px-2 lg:px-0"
+              style={{ color: "var(--text-muted)" }}
             >
               6+ years of experience crafting high-performance web applications.
               I help businesses build scalable, beautiful digital products that users love.
@@ -184,7 +187,7 @@ export default function Hero() {
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">
                 {stat.number}
               </div>
-              <div className="text-xs sm:text-sm text-slate-500 mt-1">{stat.label}</div>
+              <div className="text-xs sm:text-sm mt-1" style={{ color: "var(--text-muted)" }}>{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -199,7 +202,8 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-slate-600 flex items-start justify-center p-1.5"
+          className="w-6 h-10 rounded-full border-2 flex items-start justify-center p-1.5"
+          style={{ borderColor: "var(--text-muted)" }}
         >
           <motion.div className="w-1.5 h-3 rounded-full bg-neon-blue" />
         </motion.div>

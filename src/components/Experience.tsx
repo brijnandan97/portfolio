@@ -83,11 +83,11 @@ export default function Experience() {
           <span className="text-neon-pink text-sm font-mono tracking-wider uppercase">
             Career Journey
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6" style={{ color: "var(--text-heading)" }}>
             Professional{" "}
             <span className="text-gradient">Experience</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+          <p className="max-w-2xl mx-auto text-lg" style={{ color: "var(--text-secondary)" }}>
             6+ years of delivering impactful solutions at industry-leading companies.
           </p>
         </motion.div>
@@ -107,7 +107,7 @@ export default function Experience() {
                 }`}
               >
                 <div className="absolute left-[14px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full border-2 z-10"
-                  style={{ borderColor: exp.color, background: exp.current ? exp.color : "#0a0a0f" }}
+                  style={{ borderColor: exp.color, background: exp.current ? exp.color : "var(--timeline-dot-bg)" }}
                 >
                   {exp.current && (
                     <span className="absolute inset-0 rounded-full animate-ping opacity-50" style={{ background: exp.color }} />
@@ -123,18 +123,18 @@ export default function Experience() {
                         CURRENT
                       </span>
                     )}
-                    <span className="text-xs text-slate-500">{exp.period}</span>
+                    <span className="text-xs" style={{ color: "var(--text-muted)" }}>{exp.period}</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white">{exp.role}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold" style={{ color: "var(--text-heading)" }}>{exp.role}</h3>
                   <p className="text-sm font-medium mt-1" style={{ color: exp.color }}>
                     {exp.company} · {exp.location}
                   </p>
-                  <p className="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                  <p className="text-xs sm:text-sm mt-3 leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                     {exp.description}
                   </p>
                   <ul className={`mt-3 sm:mt-4 space-y-2 ${index % 2 === 0 ? "md:text-right" : ""}`}>
                     {exp.highlights.map((h) => (
-                      <li key={h} className="text-xs text-slate-500 flex items-start gap-2" style={{ justifyContent: index % 2 === 0 ? "flex-end" : "flex-start" }}>
+                      <li key={h} className="text-xs flex items-start gap-2" style={{ color: "var(--text-muted)", justifyContent: index % 2 === 0 ? "flex-end" : "flex-start" }}>
                         {index % 2 !== 0 && <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ background: exp.color }} />}
                         <span>{h}</span>
                         {index % 2 === 0 && <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ background: exp.color }} />}

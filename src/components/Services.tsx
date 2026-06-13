@@ -70,11 +70,11 @@ export default function Services() {
           <span className="text-neon-purple text-sm font-mono tracking-wider uppercase">
             What I Offer
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6" style={{ color: "var(--text-heading)" }}>
             Services That{" "}
             <span className="text-gradient">Deliver Results</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+          <p className="max-w-2xl mx-auto text-lg" style={{ color: "var(--text-secondary)" }}>
             From concept to deployment, I provide end-to-end development services
             tailored to your business needs.
           </p>
@@ -96,17 +96,18 @@ export default function Services() {
               >
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-neon-blue transition-colors">
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-neon-blue transition-colors" style={{ color: "var(--text-heading)" }}>
                 {service.title}
               </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
+              <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-secondary)" }}>
                 {service.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {service.features.map((feature) => (
                   <span
                     key={feature}
-                    className="text-xs px-3 py-1 rounded-full border border-white/10 text-slate-500"
+                    className="text-xs px-3 py-1 rounded-full border"
+                    style={{ borderColor: "var(--border-input)", color: "var(--text-muted)" }}
                   >
                     {feature}
                   </span>

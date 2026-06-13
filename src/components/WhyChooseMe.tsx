@@ -188,11 +188,11 @@ export default function WhyChooseMe() {
           <span className="text-neon-green text-sm font-mono tracking-wider uppercase">
             Why Choose Me
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6" style={{ color: "var(--text-heading)" }}>
             Me vs Freelancers vs{" "}
             <span className="text-gradient">Agencies</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+          <p className="max-w-2xl mx-auto text-lg" style={{ color: "var(--text-secondary)" }}>
             See how working with me compares to hiring random freelancers or expensive agencies.
             Quality, speed, and value — all in one place.
           </p>
@@ -207,23 +207,23 @@ export default function WhyChooseMe() {
         >
           <div className="grid grid-cols-4 gap-0">
             {/* Header Row */}
-            <div className="p-5 border-b border-white/5 bg-white/[0.02]">
-              <span className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
+            <div className="p-5 border-b" style={{ borderColor: "var(--border-color)", background: "var(--bg-secondary)" }}>
+              <span className="text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--text-secondary)" }}>
                 Factor
               </span>
             </div>
-            <div className="p-5 border-b border-white/5 bg-neon-blue/[0.03]">
+            <div className="p-5 border-b bg-neon-blue/[0.03]" style={{ borderColor: "var(--border-color)" }}>
               <span className="text-sm font-bold text-neon-blue uppercase tracking-wider">
                 Brij Singla
               </span>
             </div>
-            <div className="p-5 border-b border-white/5 bg-white/[0.02]">
-              <span className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
+            <div className="p-5 border-b" style={{ borderColor: "var(--border-color)", background: "var(--bg-secondary)" }}>
+              <span className="text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--text-secondary)" }}>
                 Other Freelancers
               </span>
             </div>
-            <div className="p-5 border-b border-white/5 bg-white/[0.02]">
-              <span className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
+            <div className="p-5 border-b" style={{ borderColor: "var(--border-color)", background: "var(--bg-secondary)" }}>
+              <span className="text-sm font-semibold uppercase tracking-wider" style={{ color: "var(--text-secondary)" }}>
                 Agencies
               </span>
             </div>
@@ -237,21 +237,21 @@ export default function WhyChooseMe() {
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
                 className="contents"
               >
-                <div className="p-5 border-b border-white/5 flex items-center gap-3">
+                <div className="p-5 border-b flex items-center gap-3" style={{ borderColor: "var(--border-color)" }}>
                   <span className="text-neon-blue">{item.icon}</span>
-                  <span className="text-sm font-semibold text-white">{item.factor}</span>
+                  <span className="text-sm font-semibold" style={{ color: "var(--text-heading)" }}>{item.factor}</span>
                 </div>
-                <div className="p-5 border-b border-white/5 bg-neon-blue/[0.03] flex items-center gap-2.5">
+                <div className="p-5 border-b bg-neon-blue/[0.03] flex items-center gap-2.5" style={{ borderColor: "var(--border-color)" }}>
                   <StatusIcon status={item.meStatus} />
-                  <span className="text-sm text-slate-200">{item.me}</span>
+                  <span className="text-sm" style={{ color: "var(--text-primary)" }}>{item.me}</span>
                 </div>
-                <div className="p-5 border-b border-white/5 flex items-center gap-2.5">
+                <div className="p-5 border-b flex items-center gap-2.5" style={{ borderColor: "var(--border-color)" }}>
                   <StatusIcon status={item.freelancerStatus} />
-                  <span className="text-sm text-slate-500">{item.freelancers}</span>
+                  <span className="text-sm" style={{ color: "var(--text-muted)" }}>{item.freelancers}</span>
                 </div>
-                <div className="p-5 border-b border-white/5 flex items-center gap-2.5">
+                <div className="p-5 border-b flex items-center gap-2.5" style={{ borderColor: "var(--border-color)" }}>
                   <StatusIcon status={item.agencyStatus} />
-                  <span className="text-sm text-slate-500">{item.agencies}</span>
+                  <span className="text-sm" style={{ color: "var(--text-muted)" }}>{item.agencies}</span>
                 </div>
               </motion.div>
             ))}
@@ -270,7 +270,7 @@ export default function WhyChooseMe() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-neon-blue">{item.icon}</span>
-                <h3 className="text-sm font-bold text-white">{item.factor}</h3>
+                <h3 className="text-sm font-bold" style={{ color: "var(--text-heading)" }}>{item.factor}</h3>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start gap-2.5">
@@ -279,25 +279,25 @@ export default function WhyChooseMe() {
                     <span className="text-xs font-semibold text-neon-blue bg-neon-blue/10 px-2 py-0.5 rounded-full shrink-0 mt-0.5">
                       Me
                     </span>
-                    <span className="text-sm text-slate-200">{item.me}</span>
+                    <span className="text-sm" style={{ color: "var(--text-primary)" }}>{item.me}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <StatusIcon status={item.freelancerStatus} />
                   <div className="flex items-start gap-2">
-                    <span className="text-xs font-semibold text-slate-500 bg-white/5 px-2 py-0.5 rounded-full shrink-0 mt-0.5">
+                    <span className="text-xs font-semibold px-2 py-0.5 rounded-full shrink-0 mt-0.5" style={{ color: "var(--text-muted)", background: "var(--bg-secondary)" }}>
                       Freelancers
                     </span>
-                    <span className="text-sm text-slate-500">{item.freelancers}</span>
+                    <span className="text-sm" style={{ color: "var(--text-muted)" }}>{item.freelancers}</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <StatusIcon status={item.agencyStatus} />
                   <div className="flex items-start gap-2">
-                    <span className="text-xs font-semibold text-slate-500 bg-white/5 px-2 py-0.5 rounded-full shrink-0 mt-0.5">
+                    <span className="text-xs font-semibold px-2 py-0.5 rounded-full shrink-0 mt-0.5" style={{ color: "var(--text-muted)", background: "var(--bg-secondary)" }}>
                       Agencies
                     </span>
-                    <span className="text-sm text-slate-500">{item.agencies}</span>
+                    <span className="text-sm" style={{ color: "var(--text-muted)" }}>{item.agencies}</span>
                   </div>
                 </div>
               </div>
@@ -312,7 +312,7 @@ export default function WhyChooseMe() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="text-center mt-12"
         >
-          <p className="text-slate-400 mb-6">
+          <p className="mb-6" style={{ color: "var(--text-secondary)" }}>
             Get agency-level quality at freelancer prices — with better communication and faster delivery.
           </p>
           <motion.a

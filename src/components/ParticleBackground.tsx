@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTheme } from "./ThemeProvider";
 
 interface Particle {
   x: number;
@@ -13,6 +14,7 @@ interface Particle {
 
 export default function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -41,6 +43,9 @@ export default function ParticleBackground() {
       }));
     };
 
+    const particleColor = theme === "light" ? "0, 150, 200" : "0, 212, 255";
+    const lineBaseOpacity = theme === "light" ? 0.06 : 0.08;
+
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -53,7 +58,7 @@ export default function ParticleBackground() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 212, 255, ${p.opacity})`;
+        ctx.fillStyle = `rgba(${particleColor}, ${p.opacity})`;
         ctx.fill();
 
         particles.slice(i + 1).forEach((p2) => {
@@ -64,7 +69,7 @@ export default function ParticleBackground() {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(0, 212, 255, ${0.08 * (1 - dist / 120)})`;
+            ctx.strokeStyle = `rgba(${particleColor}, ${lineBaseOpacity * (1 - dist / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -78,19 +83,24 @@ export default function ParticleBackground() {
     createParticles();
     animate();
 
-    window.addEventListener("resize", () => {
+    const handleResize = () => {
       resize();
       createParticles();
-    });
+    };
 
-    return () => cancelAnimationFrame(animationId);
-  }, []);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [theme]);
 
   return (
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: theme === "light" ? 0.4 : 0.6 }}
     />
   );
 }

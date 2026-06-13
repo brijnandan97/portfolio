@@ -45,11 +45,11 @@ export default function About() {
           <span className="text-neon-blue text-sm font-mono tracking-wider uppercase">
             About Me
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6" style={{ color: "var(--text-heading)" }}>
             Building Digital{" "}
             <span className="text-gradient">Excellence</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+          <p className="max-w-2xl mx-auto text-lg" style={{ color: "var(--text-secondary)" }}>
             I&apos;m a Senior Full-Stack Developer currently at Majid Al Futtaim, managing
             the Seller Portal for Carrefour. I specialize in creating scalable,
             high-performance web applications that drive business results.
@@ -66,10 +66,10 @@ export default function About() {
               className="glass-card rounded-2xl p-6 text-center"
             >
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--text-heading)" }}>
                 {item.title}
               </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                 {item.description}
               </p>
             </motion.div>
@@ -84,10 +84,10 @@ export default function About() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-2xl font-bold mb-4" style={{ color: "var(--text-heading)" }}>
                 Why Work With Me?
               </h3>
-              <p className="text-slate-400 leading-relaxed mb-6">
+              <p className="leading-relaxed mb-6" style={{ color: "var(--text-secondary)" }}>
                 With experience at top-tier companies like ZS Associates, Infosys, and
                 Majid Al Futtaim, I bring enterprise-grade engineering practices to every
                 project. Whether it&apos;s a startup MVP or a large-scale platform, I deliver
@@ -100,7 +100,7 @@ export default function About() {
                   "Rigorous testing (85%+ code coverage)",
                   "Clear communication & timely delivery",
                 ].map((point) => (
-                  <li key={point} className="flex items-center gap-3 text-slate-300">
+                  <li key={point} className="flex items-center gap-3" style={{ color: "var(--text-primary)" }}>
                     <span className="w-2 h-2 rounded-full bg-neon-green flex-shrink-0" />
                     {point}
                   </li>
@@ -117,7 +117,8 @@ export default function About() {
                 <motion.div
                   key={stat.label}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-dark-700/50 rounded-xl p-5 text-center border border-white/5"
+                  className="rounded-xl p-5 text-center border"
+                  style={{ background: "var(--bg-tertiary)", borderColor: "var(--border-color)" }}
                 >
                   <motion.div
                     initial={{ scale: 0 }}
@@ -127,7 +128,7 @@ export default function About() {
                   >
                     {stat.value}
                   </motion.div>
-                  <div className="text-xs text-slate-500 mt-1">{stat.label}</div>
+                  <div className="text-xs mt-1" style={{ color: "var(--text-muted)" }}>{stat.label}</div>
                 </motion.div>
               ))}
             </div>

@@ -68,11 +68,11 @@ export default function Contact() {
           <span className="text-neon-pink text-sm font-mono tracking-wider uppercase">
             Let&apos;s Talk
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-6" style={{ color: "var(--text-heading)" }}>
             Start Your{" "}
             <span className="text-gradient">Project</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+          <p className="max-w-2xl mx-auto text-lg" style={{ color: "var(--text-secondary)" }}>
             Have a project in mind? Let&apos;s discuss how I can help bring your vision to life.
           </p>
         </motion.div>
@@ -83,10 +83,10 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold text-white mb-6">
+            <h3 className="text-2xl font-bold mb-6" style={{ color: "var(--text-heading)" }}>
               Get in Touch
             </h3>
-            <p className="text-slate-400 mb-8 leading-relaxed">
+            <p className="mb-8 leading-relaxed" style={{ color: "var(--text-secondary)" }}>
               Whether you need a full web application, a landing page, or help
               optimizing an existing project, I&apos;m here to help. Let&apos;s build
               something great together.
@@ -103,8 +103,8 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500">Email</p>
-                  <p className="text-slate-200 group-hover:text-neon-blue transition-colors">
+                  <p className="text-sm" style={{ color: "var(--text-muted)" }}>Email</p>
+                  <p className="group-hover:text-neon-blue transition-colors" style={{ color: "var(--text-primary)" }}>
                     brijnandan9711@gmail.com
                   </p>
                 </div>
@@ -117,8 +117,8 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500">Phone</p>
-                  <p className="text-slate-200 group-hover:text-neon-purple transition-colors">
+                  <p className="text-sm" style={{ color: "var(--text-muted)" }}>Phone</p>
+                  <p className="group-hover:text-neon-purple transition-colors" style={{ color: "var(--text-primary)" }}>
                     +91-7018289620
                   </p>
                 </div>
@@ -136,8 +136,8 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500">LinkedIn</p>
-                  <p className="text-slate-200 group-hover:text-neon-pink transition-colors">
+                  <p className="text-sm" style={{ color: "var(--text-muted)" }}>LinkedIn</p>
+                  <p className="group-hover:text-neon-pink transition-colors" style={{ color: "var(--text-primary)" }}>
                     brij-singla
                   </p>
                 </div>
@@ -155,8 +155,8 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500">Instagram</p>
-                  <p className="text-slate-200 group-hover:text-pink-400 transition-colors">
+                  <p className="text-sm" style={{ color: "var(--text-muted)" }}>Instagram</p>
+                  <p className="group-hover:text-pink-400 transition-colors" style={{ color: "var(--text-primary)" }}>
                     @brij_singla
                   </p>
                 </div>
@@ -170,8 +170,8 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500">Location</p>
-                  <p className="text-slate-200">Gurugram, India / Dubai, UAE</p>
+                  <p className="text-sm" style={{ color: "var(--text-muted)" }}>Location</p>
+                  <p style={{ color: "var(--text-primary)" }}>Gurugram, India / Dubai, UAE</p>
                 </div>
               </div>
             </div>
@@ -185,33 +185,36 @@ export default function Contact() {
             className="glass-card rounded-2xl p-8 space-y-5"
           >
             <div>
-              <label className="text-sm text-slate-400 mb-1.5 block">Your Name</label>
+              <label className="text-sm mb-1.5 block" style={{ color: "var(--text-secondary)" }}>Your Name</label>
               <input
                 type="text"
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-dark-900/50 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-neon-blue/50 transition-colors"
+                className="w-full px-4 py-3 rounded-xl focus:outline-none transition-colors"
+                style={{ background: "var(--bg-input)", border: "1px solid var(--border-input)", color: "var(--text-heading)" }}
                 placeholder="John Doe"
               />
             </div>
             <div>
-              <label className="text-sm text-slate-400 mb-1.5 block">Email Address</label>
+              <label className="text-sm mb-1.5 block" style={{ color: "var(--text-secondary)" }}>Email Address</label>
               <input
                 type="email"
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-dark-900/50 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-neon-blue/50 transition-colors"
+                className="w-full px-4 py-3 rounded-xl focus:outline-none transition-colors"
+                style={{ background: "var(--bg-input)", border: "1px solid var(--border-input)", color: "var(--text-heading)" }}
                 placeholder="john@company.com"
               />
             </div>
             <div>
-              <label className="text-sm text-slate-400 mb-1.5 block">Project Type</label>
+              <label className="text-sm mb-1.5 block" style={{ color: "var(--text-secondary)" }}>Project Type</label>
               <select
                 value={formData.projectType}
                 onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-dark-900/50 border border-white/10 text-white focus:outline-none focus:border-neon-blue/50 transition-colors appearance-none"
+                className="w-full px-4 py-3 rounded-xl focus:outline-none transition-colors appearance-none"
+                style={{ background: "var(--bg-input)", border: "1px solid var(--border-input)", color: "var(--text-heading)" }}
               >
                 <option value="">Select...</option>
                 <option value="Web Application">Web Application</option>
@@ -224,14 +227,15 @@ export default function Contact() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm text-slate-400 mb-1.5 block">Your Country</label>
+                <label className="text-sm mb-1.5 block" style={{ color: "var(--text-secondary)" }}>Your Country</label>
                 <select
                   value={selectedCountry}
                   onChange={(e) => {
                     setSelectedCountry(e.target.value);
                     setFormData({ ...formData, budget: "" });
                   }}
-                  className="w-full px-4 py-3 rounded-xl bg-dark-900/50 border border-white/10 text-white focus:outline-none focus:border-neon-blue/50 transition-colors appearance-none"
+                  className="w-full px-4 py-3 rounded-xl focus:outline-none transition-colors appearance-none"
+                  style={{ background: "var(--bg-input)", border: "1px solid var(--border-input)", color: "var(--text-heading)" }}
                 >
                   {Object.entries(budgetRanges).map(([key, { label }]) => (
                     <option key={key} value={key}>{label}</option>
@@ -239,11 +243,12 @@ export default function Contact() {
                 </select>
               </div>
               <div>
-                <label className="text-sm text-slate-400 mb-1.5 block">Budget Range</label>
+                <label className="text-sm mb-1.5 block" style={{ color: "var(--text-secondary)" }}>Budget Range</label>
                 <select
                   value={formData.budget}
                   onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-dark-900/50 border border-white/10 text-white focus:outline-none focus:border-neon-blue/50 transition-colors appearance-none"
+                  className="w-full px-4 py-3 rounded-xl focus:outline-none transition-colors appearance-none"
+                  style={{ background: "var(--bg-input)", border: "1px solid var(--border-input)", color: "var(--text-heading)" }}
                 >
                   <option value="">Select...</option>
                   {budgetRanges[selectedCountry].ranges.map((range) => (
@@ -253,13 +258,14 @@ export default function Contact() {
               </div>
             </div>
             <div>
-              <label className="text-sm text-slate-400 mb-1.5 block">Project Details</label>
+              <label className="text-sm mb-1.5 block" style={{ color: "var(--text-secondary)" }}>Project Details</label>
               <textarea
                 rows={4}
                 required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-dark-900/50 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-neon-blue/50 transition-colors resize-none"
+                className="w-full px-4 py-3 rounded-xl focus:outline-none transition-colors resize-none"
+                style={{ background: "var(--bg-input)", border: "1px solid var(--border-input)", color: "var(--text-heading)" }}
                 placeholder="Tell me about your project, goals, and timeline..."
               />
             </div>
@@ -271,7 +277,7 @@ export default function Contact() {
             >
               {submitted ? "Opening Email Client..." : "Send Message"}
             </motion.button>
-            <p className="text-xs text-slate-600 text-center">
+            <p className="text-xs text-center" style={{ color: "var(--text-muted)" }}>
               I typically respond within 24 hours.
             </p>
           </motion.form>
