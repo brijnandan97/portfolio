@@ -64,7 +64,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden overflow-x-clip"
     >
       <FloatingOrb delay={0} size={400} color="#00d4ff" x="10%" y="20%" />
       <FloatingOrb delay={2} size={300} color="#b84dff" x="70%" y="60%" />
@@ -72,13 +72,13 @@ export default function Hero() {
 
       <div className="absolute inset-0 dot-pattern" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24 lg:pt-0">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="relative flex-shrink-0 order-2 lg:order-1 lg:-ml-5"
+            className="relative flex-shrink-0 order-1 lg:order-1 lg:-ml-5"
           >
             <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
               <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-neon-blue via-neon-purple to-neon-pink opacity-40 blur-sm" />
@@ -94,7 +94,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          <div className="text-center lg:text-left flex-1 order-1 lg:order-2">
+          <div className="text-center lg:text-left flex-1 order-2 lg:order-2">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -169,7 +169,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4 }}
-          className="mt-12 sm:mt-16 flex items-center justify-center gap-6 sm:gap-12 text-center"
+          className="mt-10 sm:mt-16 flex items-center justify-center gap-8 sm:gap-12 text-center"
         >
           {[
             { number: "6+", label: "Years Experience" },
@@ -194,7 +194,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden sm:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

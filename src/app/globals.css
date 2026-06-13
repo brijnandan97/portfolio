@@ -18,6 +18,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -215,4 +216,10 @@
 
 .animate-float-delayed {
   animation: float 6s ease-in-out infinite 2s;
+}
+
+@media (pointer: fine) and (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
 }
