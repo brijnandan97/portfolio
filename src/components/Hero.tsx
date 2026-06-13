@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const roles = [
   "Full-Stack Developer",
@@ -71,74 +72,98 @@ export default function Hero() {
 
       <div className="absolute inset-0 dot-pattern" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6"
-        >
-          <span className="inline-block px-4 py-2 rounded-full text-sm font-medium border border-neon-blue/30 text-neon-blue bg-neon-blue/5">
-            Available for Freelance Projects
-          </span>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
-        >
-          Hi, I&apos;m{" "}
-          <span className="text-gradient">Brij Singla</span>
-        </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg sm:text-xl md:text-3xl text-slate-400 mb-4 h-8 sm:h-10 flex items-center justify-center gap-2"
-        >
-          <span>I&apos;m a</span>
-          <span className="text-neon-blue font-semibold">
-            {displayText}
-            <span className="animate-pulse">|</span>
-          </span>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto mb-8 sm:mb-10 px-2"
-        >
-          6+ years of experience crafting high-performance web applications.
-          I help businesses build scalable, beautiful digital products that users love.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <motion.a
-            href="#contact"
-            className="btn-primary text-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="relative flex-shrink-0 order-2 lg:order-1 lg:-ml-5"
           >
-            Start a Project
-          </motion.a>
-          <motion.a
-            href="#projects"
-            className="btn-secondary text-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View My Work
-          </motion.a>
-        </motion.div>
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
+              <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-neon-blue via-neon-purple to-neon-pink opacity-40 blur-sm" />
+              <div className="relative w-full h-full rounded-full overflow-hidden border border-white/10">
+                <Image
+                  src="/profile.png"
+                  alt="Brij Singla"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="text-center lg:text-left flex-1 order-1 lg:order-2">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mb-6"
+            >
+              <span className="inline-block px-4 py-2 rounded-full text-sm font-medium border border-neon-blue/30 text-neon-blue bg-neon-blue/5">
+                Available for Freelance Projects
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-5xl md:text-7xl lg:text-7xl font-bold mb-6 leading-tight"
+            >
+              Hi, I&apos;m{" "}
+              <span className="text-gradient">Brij Singla</span>
+            </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-lg sm:text-xl md:text-3xl text-slate-400 mb-4 h-8 sm:h-10 flex items-center justify-center lg:justify-start gap-2"
+            >
+              <span>I&apos;m a</span>
+              <span className="text-neon-blue font-semibold">
+                {displayText}
+                <span className="animate-pulse">|</span>
+              </span>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="text-base sm:text-lg text-slate-500 max-w-2xl mb-8 sm:mb-10 px-2 lg:px-0"
+            >
+              6+ years of experience crafting high-performance web applications.
+              I help businesses build scalable, beautiful digital products that users love.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+            >
+              <motion.a
+                href="#contact"
+                className="btn-primary text-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Start a Project
+              </motion.a>
+              <motion.a
+                href="#projects"
+                className="btn-secondary text-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View My Work
+              </motion.a>
+            </motion.div>
+          </div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0 }}
