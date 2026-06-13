@@ -19,27 +19,27 @@ const regions: Record<string, { label: string; flag: string; pricing: PricingDat
   uae: {
     label: "UAE",
     flag: "🇦🇪",
-    pricing: { starter: "350", professional: "900", enterprise: "2,500", symbol: "AED " },
+    pricing: { starter: "500", professional: "1,500", enterprise: "4,000", symbol: "AED " },
   },
   usa: {
     label: "USA",
     flag: "🇺🇸",
-    pricing: { starter: "500", professional: "2,000", enterprise: "5,000", symbol: "$" },
+    pricing: { starter: "150", professional: "400", enterprise: "1,000", symbol: "$" },
   },
   uk: {
     label: "UK",
     flag: "🇬🇧",
-    pricing: { starter: "400", professional: "1,600", enterprise: "4,000", symbol: "£" },
+    pricing: { starter: "120", professional: "300", enterprise: "800", symbol: "£" },
   },
   europe: {
     label: "Europe",
     flag: "🇪🇺",
-    pricing: { starter: "450", professional: "1,800", enterprise: "4,500", symbol: "€" },
+    pricing: { starter: "130", professional: "350", enterprise: "900", symbol: "€" },
   },
   australia: {
     label: "Australia",
     flag: "🇦🇺",
-    pricing: { starter: "750", professional: "3,000", enterprise: "7,500", symbol: "A$" },
+    pricing: { starter: "200", professional: "600", enterprise: "1,500", symbol: "A$" },
   },
 };
 

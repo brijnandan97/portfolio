@@ -3,9 +3,37 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 
+const budgetRanges: Record<string, { label: string; ranges: string[] }> = {
+  india: {
+    label: "🇮🇳 India",
+    ranges: ["₹5,000 - ₹10,000", "₹10,000 - ₹25,000", "₹25,000 - ₹50,000", "₹50,000+"],
+  },
+  uae: {
+    label: "🇦🇪 UAE",
+    ranges: ["AED 300 - AED 800", "AED 800 - AED 2,000", "AED 2,000 - AED 5,000", "AED 5,000+"],
+  },
+  usa: {
+    label: "🇺🇸 USA",
+    ranges: ["$100 - $250", "$250 - $500", "$500 - $1,200", "$1,200+"],
+  },
+  uk: {
+    label: "🇬🇧 UK",
+    ranges: ["£80 - £200", "£200 - £450", "£450 - £1,000", "£1,000+"],
+  },
+  europe: {
+    label: "🇪🇺 Europe",
+    ranges: ["€90 - €220", "€220 - €500", "€500 - €1,100", "€1,100+"],
+  },
+  australia: {
+    label: "🇦🇺 Australia",
+    ranges: ["A$150 - A$350", "A$350 - A$800", "A$800 - A$1,800", "A$1,800+"],
+  },
+};
+
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [selectedCountry, setSelectedCountry] = useState("india");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -159,21 +187,36 @@ export default function Contact() {
                 placeholder="john@company.com"
               />
             </div>
+            <div>
+              <label className="text-sm text-slate-400 mb-1.5 block">Project Type</label>
+              <select
+                value={formData.projectType}
+                onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                className="w-full px-4 py-3 rounded-xl bg-dark-900/50 border border-white/10 text-white focus:outline-none focus:border-neon-blue/50 transition-colors appearance-none"
+              >
+                <option value="">Select...</option>
+                <option value="Web Application">Web Application</option>
+                <option value="E-Commerce">E-Commerce</option>
+                <option value="Landing Page">Landing Page</option>
+                <option value="Dashboard">Dashboard</option>
+                <option value="API Development">API Development</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm text-slate-400 mb-1.5 block">Project Type</label>
+                <label className="text-sm text-slate-400 mb-1.5 block">Your Country</label>
                 <select
-                  value={formData.projectType}
-                  onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                  value={selectedCountry}
+                  onChange={(e) => {
+                    setSelectedCountry(e.target.value);
+                    setFormData({ ...formData, budget: "" });
+                  }}
                   className="w-full px-4 py-3 rounded-xl bg-dark-900/50 border border-white/10 text-white focus:outline-none focus:border-neon-blue/50 transition-colors appearance-none"
                 >
-                  <option value="">Select...</option>
-                  <option value="Web Application">Web Application</option>
-                  <option value="E-Commerce">E-Commerce</option>
-                  <option value="Landing Page">Landing Page</option>
-                  <option value="Dashboard">Dashboard</option>
-                  <option value="API Development">API Development</option>
-                  <option value="Other">Other</option>
+                  {Object.entries(budgetRanges).map(([key, { label }]) => (
+                    <option key={key} value={key}>{label}</option>
+                  ))}
                 </select>
               </div>
               <div>
@@ -184,10 +227,9 @@ export default function Contact() {
                   className="w-full px-4 py-3 rounded-xl bg-dark-900/50 border border-white/10 text-white focus:outline-none focus:border-neon-blue/50 transition-colors appearance-none"
                 >
                   <option value="">Select...</option>
-                  <option value="$500-$1000">$500 - $1,000</option>
-                  <option value="$1000-$3000">$1,000 - $3,000</option>
-                  <option value="$3000-$5000">$3,000 - $5,000</option>
-                  <option value="$5000+">$5,000+</option>
+                  {budgetRanges[selectedCountry].ranges.map((range) => (
+                    <option key={range} value={range}>{range}</option>
+                  ))}
                 </select>
               </div>
             </div>
