@@ -5,17 +5,13 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
-  const [isClicking, setIsClicking] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
 
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
 
-  const springX = useSpring(cursorX, { damping: 25, stiffness: 300 });
-  const springY = useSpring(cursorY, { damping: 25, stiffness: 300 });
-
-  const trailX = useSpring(cursorX, { damping: 40, stiffness: 150 });
-  const trailY = useSpring(cursorY, { damping: 40, stiffness: 150 });
+  const springX = useSpring(cursorX, { damping: 20, stiffness: 150, mass: 0.5 });
+  const springY = useSpring(cursorY, { damping: 20, stiffness: 150, mass: 0.5 });
 
   useEffect(() => {
     const checkMobile = () => {
@@ -34,13 +30,6 @@ export default function CustomCursor() {
       cursorY.set(e.clientY);
     };
 
-    const handleMouseDown = () => setIsClicking(true);
-    const handleMouseUp = () => setIsClicking(false);
-
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("mouseup", handleMouseUp);
-
     const handleHoverIn = (e: Event) => {
       const target = e.target as HTMLElement;
       if (target.closest("a, button, [role='button'], input, textarea, select")) {
@@ -54,13 +43,12 @@ export default function CustomCursor() {
       }
     };
 
+    window.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseover", handleHoverIn);
     document.addEventListener("mouseout", handleHoverOut);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mousedown", handleMouseDown);
-      window.removeEventListener("mouseup", handleMouseUp);
       document.removeEventListener("mouseover", handleHoverIn);
       document.removeEventListener("mouseout", handleHoverOut);
     };
@@ -69,55 +57,27 @@ export default function CustomCursor() {
   if (isMobile) return null;
 
   return (
-    <>
+    <motion.div
+      className="fixed top-0 left-0 z-[9999] pointer-events-none"
+      style={{
+        x: springX,
+        y: springY,
+        translateX: "-50%",
+        translateY: "-50%",
+      }}
+    >
       <motion.div
-        className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference"
-        style={{
-          x: springX,
-          y: springY,
-          translateX: "-50%",
-          translateY: "-50%",
+        animate={{
+          width: isHovering ? 40 : 24,
+          height: isHovering ? 40 : 24,
+          opacity: isHovering ? 0.25 : 0.15,
         }}
-      >
-        <motion.div
-          animate={{
-            width: isHovering ? 48 : isClicking ? 8 : 12,
-            height: isHovering ? 48 : isClicking ? 8 : 12,
-            borderRadius: "50%",
-          }}
-          transition={{ type: "spring", damping: 20, stiffness: 300 }}
-          style={{
-            background: isHovering
-              ? "rgba(0, 212, 255, 0.15)"
-              : "white",
-            border: isHovering ? "2px solid rgba(0, 212, 255, 0.8)" : "none",
-          }}
-        />
-      </motion.div>
-
-      <motion.div
-        className="fixed top-0 left-0 z-[9998] pointer-events-none"
+        transition={{ type: "spring", damping: 20, stiffness: 300 }}
+        className="rounded-full"
         style={{
-          x: trailX,
-          y: trailY,
-          translateX: "-50%",
-          translateY: "-50%",
+          background: "radial-gradient(circle, rgba(0, 212, 255, 0.6) 0%, rgba(184, 77, 255, 0.2) 60%, transparent 100%)",
         }}
-      >
-        <motion.div
-          animate={{
-            width: isHovering ? 60 : 32,
-            height: isHovering ? 60 : 32,
-            opacity: isClicking ? 0.8 : 0.4,
-          }}
-          transition={{ type: "spring", damping: 20, stiffness: 200 }}
-          style={{
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(0, 212, 255, 0.15), rgba(184, 77, 255, 0.05))",
-            border: "1px solid rgba(0, 212, 255, 0.2)",
-          }}
-        />
-      </motion.div>
-    </>
+      />
+    </motion.div>
   );
 }
