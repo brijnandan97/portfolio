@@ -16,13 +16,22 @@ export const metadata: Metadata = {
     "website development",
     "frontend developer",
     "Brij Singla",
+    "hire React developer",
+    "freelance web developer India",
+    "Next.js freelancer",
+    "web app development services",
   ],
+  metadataBase: new URL("https://brijsingla.dev"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Brij Singla | Senior Full-Stack Developer",
     description:
       "6+ years of experience building scalable web applications. Let's bring your vision to life.",
     type: "website",
     locale: "en_US",
+    siteName: "Brij Singla - Web Developer",
   },
   twitter: {
     card: "summary_large_image",
@@ -33,7 +42,57 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Brij Singla - Web Development Services",
+  description:
+    "Senior Full-Stack Developer offering web application development, e-commerce solutions, performance optimization, and technical consulting.",
+  url: "https://brijsingla.dev",
+  telephone: "+917018289620",
+  email: "brijnandan9711@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Gurugram",
+    addressCountry: "IN",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Brij Singla",
+    jobTitle: "Senior Full-Stack Developer",
+    knowsAbout: [
+      "React",
+      "Next.js",
+      "Angular",
+      "TypeScript",
+      "Node.js",
+      "Web Performance Optimization",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "Majid Al Futtaim",
+    },
+  },
+  serviceType: [
+    "Web Application Development",
+    "E-Commerce Development",
+    "Performance Optimization",
+    "UI/UX Development",
+    "API Development",
+    "Technical Consulting",
+  ],
+  areaServed: "Worldwide",
+  priceRange: "$$",
 };
 
 export default function RootLayout({
@@ -69,6 +128,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider>
           {children}
         </ThemeProvider>

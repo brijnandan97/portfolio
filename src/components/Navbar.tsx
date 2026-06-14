@@ -2,15 +2,18 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/#home" },
+  { name: "About", href: "/#about" },
+  { name: "Services", href: "/#services" },
+  { name: "Experience", href: "/#experience" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 function ThemeToggle() {
@@ -73,9 +76,51 @@ function ThemeToggle() {
   );
 }
 
+function NavLink({
+  href,
+  isHome,
+  className,
+  style,
+  onClick,
+  children,
+}: {
+  href: string;
+  isHome: boolean;
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: () => void;
+  children: React.ReactNode;
+}) {
+  const isHashLink = href.startsWith("/#");
+
+  if (isHashLink && isHome) {
+    return (
+      <a href={href.replace("/", "")} className={className} style={style} onClick={onClick}>
+        {children}
+      </a>
+    );
+  }
+
+  if (isHashLink && !isHome) {
+    return (
+      <Link href={href} className={className} style={style} onClick={onClick}>
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <Link href={href} className={className} style={style} onClick={onClick}>
+      {children}
+    </Link>
+  );
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -96,37 +141,37 @@ export default function Navbar() {
       style={scrolled ? { background: "var(--nav-bg)", borderColor: "var(--border-color)", boxShadow: "var(--nav-shadow)" } : undefined}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
-        <motion.a
-          href="#home"
-          className="text-2xl font-bold text-gradient"
-          whileHover={{ scale: 1.05 }}
-        >
-          BS.
-        </motion.a>
+        <Link href="/">
+          <motion.span
+            className="text-2xl font-bold text-gradient cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+          >
+            BS.
+          </motion.span>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <motion.a
+            <NavLink
               key={link.name}
               href={link.href}
+              isHome={isHome}
               className="text-sm font-medium transition-colors relative group"
               style={{ color: "var(--text-secondary)" }}
-              whileHover={{ y: -2 }}
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-neon-blue group-hover:w-full transition-all duration-300" />
-            </motion.a>
+            </NavLink>
           ))}
           <ThemeToggle />
-          <motion.a
-            href="#contact"
+          <NavLink
+            href="/#contact"
+            isHome={isHome}
             className="btn-primary text-sm"
             style={{ padding: "10px 24px" }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             Hire Me
-          </motion.a>
+          </NavLink>
         </div>
 
         <div className="md:hidden flex items-center gap-3">
@@ -163,27 +208,32 @@ export default function Navbar() {
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link, i) => (
-                <motion.a
+                <motion.div
                   key={link.name}
-                  href={link.href}
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: i * 0.1 }}
-                  className="hover:text-neon-blue transition-colors py-2"
-                  style={{ color: "var(--text-secondary)" }}
-                  onClick={() => setMobileOpen(false)}
                 >
-                  {link.name}
-                </motion.a>
+                  <NavLink
+                    href={link.href}
+                    isHome={isHome}
+                    className="hover:text-neon-blue transition-colors py-2 block"
+                    style={{ color: "var(--text-secondary)" }}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.name}
+                  </NavLink>
+                </motion.div>
               ))}
-              <a
-                href="#contact"
+              <NavLink
+                href="/#contact"
+                isHome={isHome}
                 className="btn-primary text-center text-sm"
                 style={{ padding: "12px 24px" }}
                 onClick={() => setMobileOpen(false)}
               >
                 Hire Me
-              </a>
+              </NavLink>
             </div>
           </motion.div>
         )}
