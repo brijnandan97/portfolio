@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
+import Chatbot from "@/components/Chatbot";
 import ParticleBackground from "@/components/ParticleBackground";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -38,6 +39,7 @@ export default function Home() {
       </main>
       <Footer />
       <FloatingCTA />
+      <Chatbot />
     </>
   );
 }
