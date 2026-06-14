@@ -50,7 +50,7 @@ const plans = [
     period: "per project",
     description: "Perfect for small businesses needing a professional web presence.",
     features: [
-      "Single page website",
+      "4-5 page website",
       "Responsive design",
       "Basic SEO setup",
       "Contact form integration",
